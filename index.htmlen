@@ -1,0 +1,71 @@
+import java.util.Scanner;
+class Employee
+{
+    private int Id;
+    private String Name;
+    private int salary;
+     public Employee()
+     {
+         
+     }
+     public Employee(int Id,String Name,int salary)
+     {
+         this.Id=Id;
+         this.Name=Name;
+         this.salary=salary;
+     }
+     public void setId(int Id)
+     {
+         this.Id=Id;
+     }
+     public void setName(String Name)
+     {
+         this.Name=Name;
+     }
+     public void setSalary(int salary)
+     {
+         this.salary=salary;
+     }
+     public int getId()
+     {
+         return Id;
+     }
+     public String getName()
+     {
+         return Name;
+     }
+     public int getSalary()
+     {
+         return salary;
+     }
+}
+class Main {
+    public static void main(String[] args) 
+    {
+        Employee [] e=new Employee[3];
+     
+        for(int i=0;i<3;i++)
+        {
+            Employee em=new Employee();
+            
+             System.out.println("enter the deatil: ");
+             Scanner sc=new Scanner(System.in);
+             String input=sc.nextLine();
+              
+             String arr[]=input.split(",");
+             //setters
+             em.setId(Integer.parseInt(arr[0]));
+             em.setName(arr[1]);
+             em.setSalary(Integer.parseInt(arr[2]));
+             e[i]=em;
+        }
+             //getter
+             for(int i=0;i<3;i++)
+             {
+                 System.out.println(e[i].getId()+" "+e[i].getName()+" "+e[i].getSalary());
+             }
+            
+        
+       
+    }
+}
